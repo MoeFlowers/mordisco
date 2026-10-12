@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* Paleta cálida y apagada: carbón como las fotos de producto, crema para leer, tomate solo en acciones */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Inter', ui-sans-serif, sans-serif;
+
+  --color-carbon: #17120f;
+  --color-carbon-2: #211a16;
+  --color-carbon-3: #2f2620;
+  --color-crema: #f7f1e8;
+  --color-crema-2: #eee4d5;
+  --color-tinta: #2a211c;
+  --color-tinta-suave: #6b5d52;
+  --color-claro: #f4ede4;
+  --color-claro-suave: #b8ada2;
+  --color-tomate: #b83f28;
+  --color-tomate-hondo: #9c3320;
+  --color-mostaza: #e3a73d;
+  --color-albahaca: #5c7f45;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-carbon);
+  color: var(--color-claro);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Foco visible en todo lo interactivo, con contraste en fondo claro y oscuro */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-mostaza);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
